@@ -24,6 +24,42 @@
             </intent-filter>
 
         </activity>
+        <activity
+            android:name=".wetapplication.WaterUsageActivity"
+            android:label="Your Water Usage"
+            android:parentActivityName=".wetapplication.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".wetapplication.HelpActivity"
+            android:label="Help"
+            android:parentActivityName=".wetapplication.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".wetapplication.DonateActivity"
+            android:label="Donate Now!"
+            android:parentActivityName=".wetapplication.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".wetapplication.FeedbackActivity"
+            android:label="Questions or Feedback"
+            android:parentActivityName=".wetapplication.HelpActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.HelpActivity" />
+        </activity>
     </application>
 
 </manifest>
