@@ -60,6 +60,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".wetapplication.HelpActivity" />
         </activity>
+        <activity
+            android:name=".wetapplication.SetupActivity"
+            android:label="@string/title_activity_setup"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
