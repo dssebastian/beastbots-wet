@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#006064"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Don't like are features, or want us to expand on one of them? Put anything you'd like us to improve on here!"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/holo_blue_light"
+        android:id="@+id/feedback_response"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:padding="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:id="@+id/feedback_submit_button"
+        android:text="SUBMIT"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Have any questions on our features? Put any questions you have here!"
+        android:id="@+id/question_response"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/holo_blue_light"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:padding="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/question_submit_button"
+        android:textSize="20sp"
+        android:text="SUBMIT"
+
+        android:layout_marginTop="30dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
