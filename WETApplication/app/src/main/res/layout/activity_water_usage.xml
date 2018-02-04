@@ -29,7 +29,7 @@
             android:textSize="20sp"
             android:id="@+id/leakage_detection_button"
             android:background="@color/buttonColor"
-            android:text="Color Coded Usage Status"
+            android:text="Usage by Floor"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="60dp"
             android:padding="10dp"></Button>
