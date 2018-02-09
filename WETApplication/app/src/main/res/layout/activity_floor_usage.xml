@@ -6,7 +6,7 @@
     android:background="@color/activityBackground"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--This is a comment -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,4 +111,5 @@
 
 
 </LinearLayout>
+
 

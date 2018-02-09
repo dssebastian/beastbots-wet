@@ -15,16 +15,14 @@ public class WaterUsageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_usage);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Button floorUsageActivity = (Button) this.findViewById(R.id.total_usage_status_button);
-        floorUsageActivity.setOnClickListener(new View.OnClickListener() {
+        Button overallUsageStatusActivity = (Button) this.findViewById(R.id.total_usage_status_button);
+        overallUsageStatusActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WaterUsageActivity.this, FloorUsageActivity.class);
+                Intent intent = new Intent(WaterUsageActivity.this, OverallUsageGraphActivity.class);
                 WaterUsageActivity.this.startActivity(intent);
+
             }
-
         });
-
     }
 }

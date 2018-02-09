@@ -39,28 +39,6 @@ public class ShareWETActivity extends AppCompatActivity {
 
             }
         });
-
-        Button sumbitbuttonquestion = (Button) this.findViewById(R.id.question_submit_button);
-        sumbitbuttonquestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText yourResponse = (EditText) ShareWETActivity.this.findViewById(R.id.question_response);
-                int yourQuestion = Integer.parseInt(yourResponse.getText().toString().trim());
-                Toast.makeText(ShareWETActivity.this, "Your question will be answered soon!", Toast.LENGTH_SHORT).show();
-
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("message/rfc822");
-                i.putExtra(Intent.EXTRA_SUBJECT, "The Water Efficiency Technologies");
-                try {
-                    startActivity(Intent.createChooser(i, "Send mail..."));
-                }
-                catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(ShareWETActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-
-                }
-
-            }
-        });
     }
 
 }

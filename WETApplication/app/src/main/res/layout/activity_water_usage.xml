@@ -44,15 +44,7 @@
             android:layout_marginBottom="60dp"
             android:padding="10dp"></Button>
 
-        <Button android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="20sp"
-            android:id="@+id/Comparing_Your_Usage_button"
-            android:text="Comparing Your Usage"
-            android:background="@color/buttonColor"
-            android:layout_marginBottom="40dp"
-            android:layout_marginRight="10dp"
-            android:padding="10dp"></Button>
+
 
 
 
