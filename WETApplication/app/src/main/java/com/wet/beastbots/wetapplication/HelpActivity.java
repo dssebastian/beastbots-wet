@@ -31,7 +31,7 @@ public class HelpActivity extends AppCompatActivity {
         shareWETButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HelpActivity.this, FeedbackActivity.class);
+                Intent intent = new Intent(HelpActivity.this, ShareWETActivity.class);
                 HelpActivity.this.startActivity(intent);
 
             }
