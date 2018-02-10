@@ -99,7 +99,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
-                android:alpha=""
                 android:background="@android:color/white"
                 android:padding="10dp"
                 android:text="Laundry Room" />
@@ -116,7 +115,7 @@
         android:paddingTop="40dp"
         android:textSize="20dp"
         android:textColor="@android:color/holo_blue_bright"
-        android:alpha=".8"
+        android:alpha=".8"/>
 
 
 
