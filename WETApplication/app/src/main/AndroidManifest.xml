@@ -15,7 +15,6 @@
             android:theme="@style/AppTheme">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
-
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
@@ -80,7 +79,13 @@
         </activity>
         <activity android:name=".wetapplication.ShowerUsageActivity"
             android:label="Shower Usage"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".wetapplication.ShareWETActivity"
+            android:label="Share WET"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".wetapplication.HelpActivity">
+        </activity>
     </application>
 
 

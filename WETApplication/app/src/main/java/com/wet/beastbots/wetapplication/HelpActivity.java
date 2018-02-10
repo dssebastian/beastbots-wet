@@ -26,6 +26,17 @@ public class HelpActivity extends AppCompatActivity {
             }
 
         });
+
+        Button shareWETButton = (Button) this.findViewById(R.id.share_button);
+        shareWETButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HelpActivity.this, ShareWETActivity.class);
+                HelpActivity.this.startActivity(intent);
+
+            }
+
+        });
     }
 
 }

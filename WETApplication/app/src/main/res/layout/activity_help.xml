@@ -27,7 +27,7 @@
         <Button android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="20sp"
-            android:id="@+id/leakage_detection_button"
+            android:id="@+id/share_button"
             android:background="@color/buttonColor"
             android:text="Share WET Here"
             android:layout_marginRight="10dp"

@@ -15,10 +15,10 @@ public class ShareWETActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
+        setContentView(R.layout.activity_share_wet);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button shareWetButton = (Button) this.findViewById(R.id.share_button);
+        Button shareWetButton = (Button) this.findViewById(R.id.share_wet_button);
         shareWetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,7 +26,6 @@ public class ShareWETActivity extends AppCompatActivity {
 
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822");
-                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"", "keshavwarrier@gmail.com"});
                 i.putExtra(Intent.EXTRA_SUBJECT, "WET");
                 i.putExtra(Intent.EXTRA_TEXT, "Type ");
                 try {
