@@ -24,5 +24,14 @@ public class WaterUsageActivity extends AppCompatActivity {
 
             }
         });
+        Button yourusagestatuspertapbutton = (Button) this.findViewById(R.id.Your_Usage_Status_Per_Tap_button);
+        yourusagestatuspertapbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WaterUsageActivity.this, WaterUsageChartActivity.class);
+                WaterUsageActivity.this.startActivity(intent);
+
+            }
+        });
     }
 }

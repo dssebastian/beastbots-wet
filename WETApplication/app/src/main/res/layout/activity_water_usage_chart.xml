@@ -14,65 +14,92 @@
         android:gravity="center"
         android:orientation="vertical">
 
-
-        <Button
-
-
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Shower"
-            android:textSize="75dp"
-            android:background="@drawable/red_circle"
-            android:textColor="@android:color/black"
-            android:id="@+id/shower_usage_button"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="30dp">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/dishwasher_button"
+                    android:layout_width="131dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_red_dark"
+                    android:padding="10dp"
+                    android:text="Dishwasher" />
 
-        <Button
+                <Button
+                    android:id="@+id/kitchen_faucet_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:background="@android:color/holo_red_dark"
+                    android:padding="10dp"
+                    android:text="Kitchen Faucet" />
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="60dp"
-            android:text="Bathtub"
-            android:textSize="75dp"
-            android:background="@drawable/yellow_circle"
-            android:textColor="@android:color/black"
-            android:id="@+id/bathtub_usage_button"/>
+            </LinearLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="60dp"
-            android:text="Left Sink"
-            android:textSize="75dp"
-            android:background="@drawable/green_circle"
-            android:textColor="@android:color/black"
-            android:id="@+id/left_sink_usage_button"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="60dp"
-            android:text="Right Sink"
-            android:textSize="70dp"
-            android:background="@drawable/yellow_circle"
-            android:textColor="@android:color/black"
-            android:id="@+id/right_sink_usage_button"/>
+                <Button
+                    android:id="@+id/kidtoilet_button"
+                    android:layout_width="131dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF00"
+                    android:padding="10dp"
+                    android:text="Kid's toilet" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="60dp"
-            android:text="Toilet"
-            android:textSize="75dp"
-            android:background="@drawable/red_circle"
-            android:textColor="@android:color/black"
-            android:id="@+id/toilet_usage_button"/>
+                <Button
+                    android:id="@+id/kidfaucet_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:background="#76FF03"
+                    android:padding="10dp"
+                    android:text="Kid's Faucet" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/shower_usage_button"
+                    android:layout_width="131dp"
+                    android:layout_height="match_parent"
+                    android:background="#76FF03"
+                    android:padding="10dp"
+                    android:text="Kid's Shower" />
+
+                <Button
+                    android:id="@+id/laundry_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:background="#FFFF00"
+                    android:padding="10dp"
+                    android:text="Laundry Room" />
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
