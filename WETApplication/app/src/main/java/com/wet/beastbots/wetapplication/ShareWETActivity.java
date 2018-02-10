@@ -15,7 +15,7 @@ public class ShareWETActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
+        setContentView(R.layout.activity_share_wet);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button shareWetButton = (Button) this.findViewById(R.id.share_button);

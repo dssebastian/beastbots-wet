@@ -15,7 +15,6 @@
             android:theme="@style/AppTheme">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
-
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
@@ -72,6 +71,20 @@
             android:label="OverallUsageStatus"
             android:parentActivityName=".wetapplication.WaterUsageActivity"
             android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".wetapplication.WaterUsageChartActivity"
+            android:label="@string/title_activity_water_usage_chart"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity android:name=".wetapplication.ShowerUsageActivity"
+            android:label="Shower Usage"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".wetapplication.ShareWETActivity"
+            android:label="Share WET"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".wetapplication.HelpActivity">
         </activity>
     </application>
 

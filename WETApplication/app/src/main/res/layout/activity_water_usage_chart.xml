@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     android:background="@color/activityBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--This is a comment -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Shower"
+            android:textSize="75dp"
+            android:background="@drawable/red_circle"
+            android:textColor="@android:color/black"
+            android:id="@+id/shower_usage_button"/>
+
+
+
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:text="Bathtub"
+            android:textSize="75dp"
+            android:background="@drawable/yellow_circle"
+            android:textColor="@android:color/black"
+            android:id="@+id/bathtub_usage_button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:text="Left Sink"
+            android:textSize="75dp"
+            android:background="@drawable/green_circle"
+            android:textColor="@android:color/black"
+            android:id="@+id/left_sink_usage_button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:text="Right Sink"
+            android:textSize="70dp"
+            android:background="@drawable/yellow_circle"
+            android:textColor="@android:color/black"
+            android:id="@+id/right_sink_usage_button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:text="Toilet"
+            android:textSize="75dp"
+            android:background="@drawable/red_circle"
+            android:textColor="@android:color/black"
+            android:id="@+id/toilet_usage_button"/>
+    </LinearLayout>
+</LinearLayout>

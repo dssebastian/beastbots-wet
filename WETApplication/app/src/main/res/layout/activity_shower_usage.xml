@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/activityBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--This is a comment -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="SHOWER"
+            android:textSize="75dp"
+            android:background="@drawable/red_circle"
+            android:textColor="@android:color/black"
+            android:id="@+id/shower_usage_button"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></LinearLayout>
+
+        <TextView
+
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:text="Your upstairs shower has used 75 gallons today. This is 50% higher than your average usage. Please check if you have a leak "
+            android:textColor="#F44336"
+            android:textSize="25dp"/>
+</LinearLayout>
+
+
+
+
