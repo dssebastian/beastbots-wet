@@ -20,13 +20,7 @@
         android:textColorHighlight="@color/colorPrimary"
         android:textSize="20sp" />
 
-    android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        xmlns:android="http://schemas.android.com/apk/res/android">
 
-    
-    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,6 +44,7 @@
             android:src="@drawable/water_droplet"/>
         
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -79,10 +74,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <Button
@@ -101,5 +96,31 @@
             android:padding="10dp"
             android:id="@+id/find_a_plumber_button"
             android:text="Find A Plumber" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="132dp"
+            android:layout_height="wrap_content"
+            android:background="@color/buttonColor"
+            android:padding="10dp"
+            android:id="@+id/setup_button"
+            android:text="Setup" />
+
+        <Button
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@color/buttonColor"
+            android:padding="10dp"
+            android:id="@+id/donate_button"
+            android:text="Donate" />
+
     </LinearLayout>
 </LinearLayout>

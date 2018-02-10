@@ -13,7 +13,65 @@
             android:name=".wetapplication.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".wetapplication.FloorUsageActivity"
+            android:label="@string/title_activity_floorusage"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".wetapplication.WaterUsageActivity">
+        </activity>
+        <activity
+            android:name=".wetapplication.WaterUsageActivity"
+            android:label="Your Water Usage"
+            android:parentActivityName=".wetapplication.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".wetapplication.HelpActivity"
+            android:label="Help"
+            android:parentActivityName=".wetapplication.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".wetapplication.DonateActivity"
+            android:label="Donate Now!"
+            android:parentActivityName=".wetapplication.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".wetapplication.FeedbackActivity"
+            android:label="Questions or Feedback"
+            android:parentActivityName=".wetapplication.HelpActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".wetapplication.HelpActivity" />
+        </activity>
+        <activity
+            android:name=".wetapplication.SetupActivity"
+            android:label="@string/title_activity_setup"
+            android:parentActivityName=".wetapplication.MainActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".wetapplication.OverallUsageGraphActivity"
+            android:label="OverallUsageStatus"
+            android:parentActivityName=".wetapplication.WaterUsageActivity"
+            android:theme="@style/AppTheme">
         </activity>
         <activity android:name=".wetapplication.WaterUsageChartActivity"
             android:label="@string/title_activity_water_usage_chart"
@@ -24,5 +82,6 @@
             android:label="Shower Usage"
             android:theme="@style/AppTheme"></activity>
     </application>
+
 
 </manifest>

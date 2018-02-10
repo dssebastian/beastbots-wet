@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#006064"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <Button android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:id="@+id/feedback_page_button"
+            android:text="Feedback and Questions"
+            android:background="@color/buttonColor"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="40dp"
+            android:padding="10dp"></Button>
+
+
+        <Button android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:id="@+id/leakage_detection_button"
+            android:background="@color/buttonColor"
+            android:text="Share WET Here"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="40dp"
+            android:padding="10dp"></Button>
+
+        <Button android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:id="@+id/Your_Usage_Status_Per_Tap_button"
+            android:text="Summary of how WET Works "
+            android:background="@color/buttonColor"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="40dp"
+            android:padding="10dp"></Button>
+
+        <Button android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:id="@+id/Comparing_Your_Usage_button"
+            android:text="Why We Created WET"
+            android:background="@color/buttonColor"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"></Button>
+
+        <Button android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:id="@+id/How_WET_Tracks_Your_Usage"
+            android:text="Submit Questions Here"
+            android:background="@color/buttonColor"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"></Button>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
