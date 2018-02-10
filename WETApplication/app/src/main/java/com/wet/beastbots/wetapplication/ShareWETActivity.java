@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.wet.beastbots.R;
@@ -18,7 +19,7 @@ public class ShareWETActivity extends AppCompatActivity {
         setContentView(R.layout.activity_share_wet);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button shareWetButton = (Button) this.findViewById(R.id.share_wet_button);
+        ImageButton shareWetButton = (ImageButton) this.findViewById(R.id.share_wet_button);
         shareWetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
