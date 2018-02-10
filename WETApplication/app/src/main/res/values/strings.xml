@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">WETApplication</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_water_usage_chart"></string>
+    <string name="title_activity_shower_usage"></string>
+    <string name="layout.activity_water_usage_chart"></string>
 </resources>

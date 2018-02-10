@@ -4,5 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="buttonColor">@android:color/holo_blue_light</color>
-    <color name="activityBackground">#006064</color>
+   <color name="activityBackground">#006064</color>
 </resources>

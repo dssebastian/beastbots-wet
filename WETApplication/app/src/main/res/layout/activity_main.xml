@@ -6,6 +6,7 @@
     android:background="@color/activityBackground"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <!--This is a comment -->
     <TextView
         android:layout_width="400dp"
