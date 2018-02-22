@@ -14,7 +14,8 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
         android:text="Thank you for buying our new product. If you liked it, spread the word about how we helped you save water."
-        android:id="@+id/overall_usage_item_text"></TextView>
+        android:id="@+id/overall_usage_item_text">
+    </TextView>
 
     <ImageButton
         android:layout_width="wrap_content"

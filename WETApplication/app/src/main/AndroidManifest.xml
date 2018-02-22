@@ -13,16 +13,17 @@
             android:name=".wetapplication.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".wetapplication.FloorUsageActivity"
+        <activity
+            android:name=".wetapplication.FloorUsageActivity"
             android:label="@string/title_activity_floorusage"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".wetapplication.WaterUsageActivity">
-        </activity>
+            android:parentActivityName=".wetapplication.WaterUsageActivity"
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".wetapplication.WaterUsageActivity"
             android:label="Your Water Usage"
@@ -63,30 +64,25 @@
             android:name=".wetapplication.SetupActivity"
             android:label="@string/title_activity_setup"
             android:parentActivityName=".wetapplication.MainActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".wetapplication.OverallUsageGraphActivity"
             android:label="OverallUsageStatus"
             android:parentActivityName=".wetapplication.WaterUsageActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-        <activity android:name=".wetapplication.WaterUsageChartActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".wetapplication.WaterUsageChartActivity"
             android:label="@string/title_activity_water_usage_chart"
-            android:theme="@style/AppTheme">
-
-        </activity>
-        <activity android:name=".wetapplication.ShowerUsageActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".wetapplication.ShowerUsageActivity"
             android:label="Shower Usage"
-            android:theme="@style/AppTheme">
-        </activity>
-        <activity android:name=".wetapplication.ShareWETActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".wetapplication.ShareWETActivity"
             android:label="Share WET"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".wetapplication.HelpActivity">
-        </activity>
+            android:parentActivityName=".wetapplication.HelpActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
-
 
 </manifest>
