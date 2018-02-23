@@ -23,11 +23,11 @@
             android:name=".wetapplication.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme">
-            <!--intent-filter>
-                <action aqndroid:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
+            </intent-filter>
         </activity>
         <activity
             android:name=".wetapplication.FloorUsageActivity"
@@ -97,11 +97,11 @@
             android:name=".wetapplication.BluetoothConnectActivity"
             android:label="Bluetooth"
             android:theme="@style/AppTheme">
-            <intent-filter>
+            <!--intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter> -->
         </activity>
     </application>
 
