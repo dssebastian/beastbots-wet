@@ -48,14 +48,18 @@ public class BluetoothConnectActivity extends AppCompatActivity {
     private Set<BluetoothDevice> mPairedDevices;
     private ArrayAdapter<String> mBTArrayAdapter;
     private ListView mDevicesListView;
+
+    public static String connectedDeviceAddress = null;
     //private CheckBox mLED1;
 
     private final String TAG = MainActivity.class.getSimpleName();
     private Handler mHandler; // Our main handler that will receive callback notifications
     private ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
+    private String activeDeviceAddress = null;
 
-    private static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // "random" unique identifier
+
+    public static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // "random" unique identifier
 
 
     // #defines for identifying shared types between calling functions
@@ -102,9 +106,10 @@ public class BluetoothConnectActivity extends AppCompatActivity {
                 }
 
                 if(msg.what == CONNECTING_STATUS){
-                    if(msg.arg1 == 1)
-                        mBluetoothStatus.setText("Connected to Device: " + (String)(msg.obj));
-                    else
+                    if(msg.arg1 == 1) {
+                        mBluetoothStatus.setText("Connected to Device: " + (String) (msg.obj));
+                        connectedDeviceAddress = activeDeviceAddress;
+                    } else
                         mBluetoothStatus.setText("Connection Failed");
                 }
             }
@@ -248,6 +253,7 @@ public class BluetoothConnectActivity extends AppCompatActivity {
             // Get the device MAC address, which is the last 17 chars in the View
             String info = ((TextView) v).getText().toString();
             final String address = info.substring(info.length() - 17);
+            activeDeviceAddress = address;
             final String name = info.substring(0,info.length() - 17);
 
             // Spawn a new thread to avoid blocking the GUI one
