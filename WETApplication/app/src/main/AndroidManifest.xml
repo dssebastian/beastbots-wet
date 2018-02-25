@@ -83,10 +83,13 @@
         <activity
             android:name=".wetapplication.WaterUsageChartActivity"
             android:label="@string/title_activity_water_usage_chart"
+            android:parentActivityName=".wetapplication.WaterUsageActivity"
             android:theme="@style/AppTheme"></activity>
+
         <activity
             android:name=".wetapplication.ShowerUsageActivity"
             android:label="Shower Usage"
+            android:parentActivityName=".wetapplication.WaterUsageChartActivity"
             android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".wetapplication.ShareWETActivity"
