@@ -9,7 +9,7 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:text="Setup"
+        android:text="Bluetooth"
         android:background="@android:color/holo_blue_light"
         android:padding="10dp"
         android:layout_gravity="center_horizontal"
