@@ -38,30 +38,13 @@
             android:layout_height="match_parent"
             android:textSize="20sp"
             android:id="@+id/Your_Usage_Status_Per_Tap_button"
-            android:text="Summary of how WET Works "
+            android:text="About WET"
             android:background="@color/buttonColor"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="40dp"
             android:padding="10dp"></Button>
 
-        <Button android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="20sp"
-            android:id="@+id/Comparing_Your_Usage_button"
-            android:text="Why We Created WET"
-            android:background="@color/buttonColor"
-            android:layout_marginBottom="40dp"
-            android:layout_marginRight="10dp"
-            android:padding="10dp"></Button>
 
-        <Button android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="20sp"
-            android:id="@+id/How_WET_Tracks_Your_Usage"
-            android:text="Submit Questions Here"
-            android:background="@color/buttonColor"
-            android:layout_marginRight="10dp"
-            android:padding="10dp"></Button>
 
     </LinearLayout>
 

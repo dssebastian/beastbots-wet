@@ -97,6 +97,21 @@
             android:parentActivityName=".wetapplication.HelpActivity"
             android:theme="@style/AppTheme"></activity>
         <activity
+            android:name=".wetapplication.NameFloorsActivity"
+            android:label="Name Floors"
+            android:parentActivityName=".wetapplication.NameFloorsActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".wetapplication.NameSensorsActivity"
+            android:label="Name Sensors"
+            android:parentActivityName=".wetapplication.NameSensorsActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".wetapplication.SensorLocationActivity"
+            android:label="Sensor Location"
+            android:parentActivityName=".wetapplication.SensorLocationActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
             android:name=".wetapplication.BluetoothConnectActivity"
             android:label="Bluetooth"
             android:theme="@style/AppTheme">

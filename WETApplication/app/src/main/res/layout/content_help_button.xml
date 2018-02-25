@@ -7,11 +7,12 @@
 
 
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
-        android:text="Bluetooth"
-        android:background="@android:color/holo_blue_light"
+        android:text="Setup"
+        android:textSize="50dp"
         android:padding="10dp"
+        android:textColor="#1E88E5"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
         android:id="@+id/leak_Detection_id"
@@ -23,6 +24,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:padding="10dp"
+        android:id="@+id/name_sensors_button"
         android:layout_height="wrap_content" />
     <Button
         android:layout_width="wrap_content"
@@ -32,6 +34,7 @@
         android:layout_gravity="right"
         android:layout_marginRight="10dp"
         android:padding="10dp"
+        android:id="@+id/name_floor_button"
         android:layout_height="wrap_content" />
     <Button
         android:layout_width="wrap_content"
@@ -40,6 +43,7 @@
         android:layout_marginTop="30dp"
         android:padding="10dp"
         android:layout_gravity="center"
+        android:id="@+id/sensor_location"
         android:layout_height="wrap_content" />
 
     <ImageView
@@ -48,6 +52,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:background="@drawable/shower_head" />
+    <Button
+        android:layout_width="wrap_content"
 
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
