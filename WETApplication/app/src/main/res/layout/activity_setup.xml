@@ -14,7 +14,7 @@
         android:padding="10dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
-        android:id="@+id/leak_Detection_id"
+        android:id="@+id/bluetooth_page_button"
         android:layout_height="wrap_content" />
     <Button
         android:layout_width="wrap_content"
@@ -23,15 +23,17 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:padding="10dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/name_sensors_button"/>
     <Button
         android:layout_width="wrap_content"
-        android:text="Name Floor"
+        android:text="Name Floors"
         android:background="@android:color/holo_blue_light"
         android:layout_marginTop="-50dp"
         android:layout_gravity="right"
         android:layout_marginRight="10dp"
         android:padding="10dp"
+        android:id="@+id/name_floors_button"
         android:layout_height="wrap_content" />
     <Button
         android:layout_width="wrap_content"
@@ -39,6 +41,7 @@
         android:background="@android:color/holo_blue_light"
         android:layout_marginTop="30dp"
         android:padding="10dp"
+        android:id="@+id/sensor_location_button"
         android:layout_gravity="center"
         android:layout_height="wrap_content" />
 

@@ -17,43 +17,43 @@ public class SetupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-            }
-        });
-
         Button nameSensorButton = (Button) this.findViewById(R.id.name_sensors_button);
         nameSensorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SetupActivity.this, NameSensorsActivity.class);
+                SetupActivity.this.startActivity(intent);
             }
         });
 
-        Button nameFloorButton = (Button) this.findViewById(R.id.name_floor_button);
-        nameSensorButton.setOnClickListener(new View.OnClickListener() {
+        Button nameFloorButton = (Button) this.findViewById(R.id.name_floors_button);
+        nameFloorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SetupActivity.this, NameFloorsActivity.class);
+                SetupActivity.this.startActivity(intent);
             }
 
         });
 
-        Button sensorLocationButton = (Button) this.findViewById(R.id.sensor_location);
-        nameSensorButton.setOnClickListener(new View.OnClickListener() {
+        Button sensorLocationButton = (Button) this.findViewById(R.id.sensor_location_button);
+        sensorLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SetupActivity.this, SensorLocationActivity.class);
+                SetupActivity.this.startActivity(intent);
             }
 
+        });
+
+        Button bluetoothPageButton = (Button) this.findViewById(R.id.bluetooth_page_button);
+        bluetoothPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SetupActivity.this, BluetoothConnectActivity.class);
+                SetupActivity.this.startActivity(intent);
+
+            }
         });
 
 

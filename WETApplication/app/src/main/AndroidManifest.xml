@@ -114,7 +114,8 @@
         <activity
             android:name=".wetapplication.BluetoothConnectActivity"
             android:label="Bluetooth"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".wetapplication.SetupActivity">
             <!--intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

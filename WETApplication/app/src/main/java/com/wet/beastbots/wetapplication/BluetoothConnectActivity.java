@@ -52,7 +52,6 @@ public class BluetoothConnectActivity extends AppCompatActivity {
     public static String connectedDeviceAddress = null;
     //private CheckBox mLED1;
 
-    private final String TAG = MainActivity.class.getSimpleName();
     private Handler mHandler; // Our main handler that will receive callback notifications
     private ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
@@ -67,7 +66,7 @@ public class BluetoothConnectActivity extends AppCompatActivity {
     private final static int MESSAGE_READ = 2; // used in bluetooth handler to identify message update
     private final static int CONNECTING_STATUS = 3; // used in bluetooth handler to identify message status
 
-
+    private static String TAG = BluetoothConnectActivity.class.getName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +98,7 @@ public class BluetoothConnectActivity extends AppCompatActivity {
                     String readMessage = null;
                     try {
                         readMessage = new String((byte[]) msg.obj, "UTF-8");
+                        Log.i(TAG, "Message read from Bluetooth: " + readMessage);
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
@@ -109,6 +109,7 @@ public class BluetoothConnectActivity extends AppCompatActivity {
                     if(msg.arg1 == 1) {
                         mBluetoothStatus.setText("Connected to Device: " + (String) (msg.obj));
                         connectedDeviceAddress = activeDeviceAddress;
+                        Log.i(TAG, "Connected to device: " + connectedDeviceAddress);
                     } else
                         mBluetoothStatus.setText("Connection Failed");
                 }
