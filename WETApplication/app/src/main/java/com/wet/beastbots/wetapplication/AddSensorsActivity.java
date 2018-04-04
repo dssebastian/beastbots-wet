@@ -10,12 +10,14 @@ import android.widget.Button;
 
 import com.wet.beastbots.R;
 
-public class NameSensorsActivity extends AppCompatActivity {
+public class AddSensorsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_name_sensors);
+        setContentView(R.layout.activity_add_sensors);
+
+        
     }
 
 }

@@ -20,7 +20,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +55,7 @@ public class BluetoothConnectActivity extends AppCompatActivity {
     private ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
     private String activeDeviceAddress = null;
+    private boolean firstTimeConnect = true;
 
 
     public static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // "random" unique identifier
@@ -63,10 +63,12 @@ public class BluetoothConnectActivity extends AppCompatActivity {
 
     // #defines for identifying shared types between calling functions
     private final static int REQUEST_ENABLE_BT = 1; // used to identify adding bluetooth names
+    private final static int REQUEST_SENSOR_DATA_VIEW = 4; // used to identify adding bluetooth names
     private final static int MESSAGE_READ = 2; // used in bluetooth handler to identify message update
     private final static int CONNECTING_STATUS = 3; // used in bluetooth handler to identify message status
 
     private static String TAG = BluetoothConnectActivity.class.getName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,8 +100,9 @@ public class BluetoothConnectActivity extends AppCompatActivity {
                     String readMessage = null;
                     try {
                         readMessage = new String((byte[]) msg.obj, "UTF-8");
-                        Log.i(TAG, "Message read from Bluetooth: " + readMessage);
-                    } catch (UnsupportedEncodingException e) {
+                        //Log.i(TAG, "Message read from Bluetooth: " + readMessage);
+                        BluetoothPublisher.getInstance().publishData(readMessage);
+                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
                     mReadBuffer.setText(readMessage);
@@ -188,6 +191,14 @@ public class BluetoothConnectActivity extends AppCompatActivity {
             }
             else
                 mBluetoothStatus.setText("Disabled");
+        } else if(requestCode == REQUEST_SENSOR_DATA_VIEW) {
+            mConnectedThread.interrupt();
+            try {
+                mConnectedThread.join();
+            }catch(Exception ex) {
+            }
+            mConnectedThread.cancel();
+            mConnectedThread = null;
         }
     }
 
@@ -230,6 +241,7 @@ public class BluetoothConnectActivity extends AppCompatActivity {
     };
 
     private void listPairedDevices(View view){
+        mBTArrayAdapter.clear(); // clear items
         mPairedDevices = mBTAdapter.getBondedDevices();
         if(mBTAdapter.isEnabled()) {
             // put it's one to the adapter
@@ -286,9 +298,10 @@ public class BluetoothConnectActivity extends AppCompatActivity {
                         }
                     }
                     if(fail == false) {
+                        Intent intent = new Intent(BluetoothConnectActivity.this, SensorDataActivity.class) ;
+                        BluetoothConnectActivity.this.startActivityForResult(intent, REQUEST_SENSOR_DATA_VIEW);
                         mConnectedThread = new ConnectedThread(mBTSocket);
                         mConnectedThread.start();
-
                         mHandler.obtainMessage(CONNECTING_STATUS, 1, -1, name)
                                 .sendToTarget();
                     }
@@ -307,10 +320,12 @@ public class BluetoothConnectActivity extends AppCompatActivity {
         return  device.createRfcommSocketToServiceRecord(BTMODULEUUID);
     }
 
+
+
     private class ConnectedThread extends Thread {
-        private final BluetoothSocket mmSocket;
-        private final InputStream mmInStream;
-        private final OutputStream mmOutStream;
+        private BluetoothSocket mmSocket;
+        private InputStream mmInStream;
+        private OutputStream mmOutStream;
 
         public ConnectedThread(BluetoothSocket socket) {
             mmSocket = socket;
@@ -331,8 +346,15 @@ public class BluetoothConnectActivity extends AppCompatActivity {
         public void run() {
             byte[] buffer = new byte[1024];  // buffer store for the stream
             int bytes; // bytes returned from read()
+
+            //first write something to output stream
+            if(firstTimeConnect) {
+                write("HC-05");
+                firstTimeConnect = false;
+            }
+
             // Keep listening to the InputStream until an exception occurs
-            while (true) {
+            while (!isInterrupted()) {
                 try {
                     // Read from the InputStream
                     bytes = mmInStream.available();
@@ -340,9 +362,13 @@ public class BluetoothConnectActivity extends AppCompatActivity {
                         buffer = new byte[1024];
                         SystemClock.sleep(100); //pause and wait for rest of data. Adjust this depending on your sending speed.
                         bytes = mmInStream.available(); // how many bytes are ready to be read?
-                        bytes = mmInStream.read(buffer, 0, bytes); // record how many bytes we actually read
-                        mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
-                                .sendToTarget(); // Send the obtained bytes to the UI activity
+                        if(bytes > 0) {
+                            if(bytes > 1024)
+                                bytes = 1024;
+                            bytes = mmInStream.read(buffer, 0, bytes); // record how many bytes we actually read
+                            mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
+                                    .sendToTarget(); // Send the obtained bytes to the UI activity
+                        }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -362,10 +388,24 @@ public class BluetoothConnectActivity extends AppCompatActivity {
 
         /* Call this from the main activity to shutdown the connection */
         public void cancel() {
-            try {
-                mmSocket.close();
-            } catch (IOException e) { }
+                try {
+                    mmInStream.close();
+                }catch(Exception ex) {}
+                mmInStream = null;
+
+                try {
+                    mmOutStream.close();
+                }catch(Exception ex) {}
+                mmOutStream = null;
+
+                try {
+                    Thread.sleep(1000);
+                    mmSocket.close();
+                }catch(Exception ex) {}
+                mmSocket = null;
         }
+
+
     }
 
 
