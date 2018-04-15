@@ -57,14 +57,14 @@ void setup()
  */
 void loop()
 {
-  //Serial.println("Serial Moniter is available");
-   if(BTserial.available())
-   {
+  Serial.println("Serial Moniter is available");
+  if(BTserial.available())
+  {
     Serial.println("Bluetooth is available");
     while(BTserial.available())
     {
-    if((millis() - oldTime) > 60,000)    // Process Repeats once per minute
-    { 
+    //if((millis() - oldTime) > 60,000)    // Process Repeats once per minute
+    //{ 
       // Disable the interrupt while calculating flow rate and sending the value to
       // the host
       detachInterrupt(sensorInterrupt);
@@ -136,10 +136,10 @@ void loop()
     
       // Enable the interrupt again now that we've finished sending output
       attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
-    }
+    //}
    }
    }
-   else {
+  else {
     Serial.println("Glitch in Bluetooth");
    }
 }
