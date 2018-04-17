@@ -7,8 +7,8 @@ int LEDPin = 13;
 
 
 SoftwareSerial BTserial(10, 9); // RX | TX
-// Connect the HC-05 TX to Arduino pin 2 RX. 
-// Connect the HC-05 RX to Arduino pin 3 TX through a voltage divider.
+// Connect the HC-05 TX to Arduino pin 10 RX. 
+// Connect the HC-05 RX to Arduino pin 9 TX through a voltage divider.
 
 
 void setup() {

@@ -1,7 +1,5 @@
 #include <SoftwareSerial.h>
 
-byte statusLed    = 13;
-
 byte sensorInterrupt = 0;  // 0 = digital pin 2
 byte sensorPin       = 2;
 
@@ -14,10 +12,6 @@ volatile byte pulseCount;
 float flowRate;
 unsigned int flowMilliLitres;
 unsigned long totalMilliLitres;
-int _num = 0;
-int LEDPin = 13;
-String _inputString = " ";
-int totalMinutes = 0;
 
 unsigned long oldTime;
 
@@ -32,11 +26,7 @@ void setup()
   // Initialize a serial connection for reporting values to the host
   Serial.begin(9600);
   BTserial.begin(9600);
-   
-  // Set up the status LED line as an output
-  pinMode(statusLed, OUTPUT);
-  digitalWrite(statusLed, HIGH);  // We have an active-low LED attached
-  
+     
   pinMode(sensorPin, INPUT);
   digitalWrite(sensorPin, HIGH);
 
@@ -63,8 +53,8 @@ void loop()
     Serial.println("Bluetooth is available");
     while(BTserial.available())
     {
-    //if((millis() - oldTime) > 60,000)    // Process Repeats once per minute
-    //{ 
+    if((millis() - oldTime) > 1000)    // Process Repeats once per minute
+    { 
       // Disable the interrupt while calculating flow rate and sending the value to
       // the host
       detachInterrupt(sensorInterrupt);
@@ -86,7 +76,6 @@ void loop()
       // passed through the sensor in this 1 second interval, then multiply by 1000 to
       // convert to millilitres.
       flowMilliLitres = (flowRate / 60) * 1000;
-      totalMinutes = millis() / 60000;
     
       // Add the millilitres passed in this second to the cumulative total
       totalMilliLitres += flowMilliLitres;
@@ -109,11 +98,7 @@ void loop()
       // Print the cumulative total of litres flowed since starting
       BTserial.println("  Output Liquid Quantity: ");             // Output separator
       BTserial.print(totalMilliLitres);
-      BTserial.print("mL"); 
-      BTserial.println("Total time water has been running:");
-      BTserial.print(totalMinutes, "minutes");
-      
-
+      BTserial.print("mL");       
 
       Serial.print("Flow rate: ");
       Serial.print(int(flowRate));  // Print the integer part of the variable
@@ -136,7 +121,7 @@ void loop()
     
       // Enable the interrupt again now that we've finished sending output
       attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
-    //}
+    }
    }
    }
   else {
